@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Simple Api test project</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand">Simple Api test project</a>
+        <form class="form-inline">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </nav>
+      
+      <p>
+        I created backend on PHP. Frontend on Bootstrap and JS. You can CRUD all posts asynchronously
+      </p>
+      <img src="DBsample.jpg" alt="DataBase" class="img-rounded">
+      </br></br>
+      
+      <!-- Add Form Button -->
+      <button
+        type="button"
+        class="btn btn-primary"
+        data-toggle="modal"
+        data-target="#addPost"
+        data-whatever="@mdo"
+      >
+        Add new post
+      </button>
+
+      <!-- Add Form -->
+      <div
+        class="modal fade"
+        id="addPost"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="addPostLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="addPostLabel">New Post</h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <label for="post-title" class="col-form-label"
+                    >Title:</label
+                  >
+                  <input type="text" class="form-control" id="post-title" />
+                </div>
+                <div class="form-group">
+                  <label for="post-body" class="col-form-label">Body:</label>
+                  <textarea class="form-control" id="post-body"></textarea>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+              <button type="button" class="btn btn-primary" onclick="addPost()">Add</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Edit Form -->
+      <div
+        class="modal fade"
+        id="editPost"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="editPostLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="editPostLabel">Edit Post</h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <label for="post-title" class="col-form-label"
+                    >Title:</label
+                  >
+                  <input type="text" class="form-control" id="edit-post-title" />
+                </div>
+                <div class="form-group">
+                  <label for="post-body" class="col-form-label">Body:</label>
+                  <textarea class="form-control" id="edit-post-body"></textarea>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+              <button type="button" class="btn btn-primary" onclick="updatePost()">Edit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      </br></br>
+
+      <div class="card-columns"></div>
+        <!-- Posts -->
+        
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
