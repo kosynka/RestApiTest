@@ -19,16 +19,18 @@ $id = $params[1];
 switch ($method) {
     case 'GET':
         switch ($type) {
-            if (isset($id)) {
-                getPost($connect, $id);
-            } else { getPosts($connect); }
-            break;
+            case 'posts':
+                if (isset($id)) {
+                    getPost($connect, $id);
+                } else { getPosts($connect); }
+                break;
         }
     case 'POST':
         switch ($type) {
             case 'posts':
                 addPost($connect, $_POST);
                 break;
+        }
     case 'PATCH':
         switch ($type) {
             case 'posts':
@@ -38,6 +40,7 @@ switch ($method) {
                     updatePost($connect, $id, $data);
                 }
                 break;
+        }
     case 'DELETE':
         switch ($type) {
             case 'posts':
